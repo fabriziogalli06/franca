@@ -5,8 +5,7 @@ export async function onRequestPost(context) {
     const datiLog = await request.json();
     
     let testoMessaggio = `📝 *Nuovo Log Chat - ${datiLog.timestamp}*\n\n`;
-    
-    // Ciclo for...of standard al posto del forEach (evita problemi di nidificazione graffe)
+
     for (const msg of datiLog.sessione) {
       const ruolo = msg.role === "user" ? "👤 Utente" : "🤖 Bot";
       testoMessaggio += `*${ruolo}:* ${msg.content}\n\n`;
