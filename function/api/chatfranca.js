@@ -34,7 +34,7 @@ Regole chiave:
         "HTTP-Referer": "https://bot-fabri.uk"
       },
       body: JSON.stringify({
-        model: "z-ai/glm-5.2",
+        model: "deepseek/deepseek-v4-flash",
         messages: payloadMessages,
         temperature: 0.6
       })
