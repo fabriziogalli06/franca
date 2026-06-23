@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Chat - bot-Fabri</title>
     <style>
-        /* Reset globale e propagazione altezza viewport */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -23,7 +22,6 @@
             color: #f5f5f7;
             height: 100vh;
             height: 100dvh;
-            /* Utilizza il dynamic viewport height per adattarsi perfettamente con le tastiere virtuali su iOS e Android */
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -31,7 +29,6 @@
             position: relative;
         }
 
-        /* Gestione dello sfondo fissa e leggera senza scatti durante lo scroll */
         body::after {
             content: "";
             position: fixed;
@@ -39,7 +36,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: linear-gradient(rgba(8, 8, 10, 0.5), rgba(8, 8, 10, 0.8)), url('backgroundwolf.jpg');
+            background-image: linear-gradient(rgba(8, 8, 10, 0.5), rgba(8, 8, 10, 0.8)), url('backgroundgarcia.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -58,7 +55,6 @@
             z-index: 10;
         }
 
-        /* Logo Brandizzato con diamante interattivo */
         .logo {
             display: inline-flex;
             align-items: center;
@@ -112,7 +108,6 @@
             }
         }
 
-        /* Area scorrimento messaggi fluida */
         .chat-viewport {
             flex: 1 1 auto;
             overflow-y: auto;
@@ -184,7 +179,7 @@
             height: 32px;
             border-radius: 50%;
             border: 1px solid rgba(255, 255, 255, 0.15);
-            background-image: url('wolf.jpg');
+            background-image: url('garcia.jpg');
             background-size: cover;
             background-position: center;
             flex-shrink: 0;
@@ -243,7 +238,6 @@
             }
         }
 
-        /* Barra di inserimento bloccata rigorosamente in fondo al viewport */
         .input-bar-container {
             padding: 12px 10px 24px 10px;
             background: rgba(8, 8, 10, 0.85);
@@ -354,19 +348,19 @@
 
 <body>
     <header>
-        <a href="https://bot-fabri.uk/" class="logo">bot-fabri<span>.uk</span></a>
+        <a href="https://franca.bot-fabri.uk/" class="logo">bot-fabri<span>.uk</span></a>
     </header>
     <div class="chat-viewport" id="chatViewport">
         <div class="chat-wrapper" id="chatWrapper">
             <div class="welcome-hero" id="welcomeHero">
-                <h1>Sono il signor Wolf, risolvo problemi</h1>
+                <h1>Sono la TUA...di Penelope!</h1>
             </div>
         </div>
         <div id="scrollAnchor"></div>
     </div>
     <div class="input-bar-container">
         <div class="input-bar-wrapper">
-            <input type="text" id="inputMessaggio" placeholder="z-ai/glm-5.2" onkeypress="handleKeyPress(event)">
+            <input type="text" id="inputMessaggio" placeholder="Dimmi tutto Baby Girl ❤️" onkeypress="handleKeyPress(event)">
             <button id="btnInvia" onclick="inviaAWorker()">Invia</button>
         </div>
     </div>
@@ -433,7 +427,7 @@
             setTimeout(forzaScorrimento, 50);
 
             try {
-                const res = await fetch("/api/chatwolf", {
+                const res = await fetch("/api/chatfranca", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ chatCompleta: cronologiaChat })
